@@ -2,6 +2,8 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/10a87eab-13c3-41b2-a107-4e61fff8662e/files/d5f05f94-69cf-496e-9ce8-c8c6353b0bbb.jpg";
+const PHONE = "+7 (999) 123-45-67";
+const PHONE_HREF = "tel:+79991234567";
 
 const menuItems = [
   {
@@ -113,6 +115,13 @@ const Index = () => {
             >
               Заказать
             </button>
+            <a
+              href={PHONE_HREF}
+              className="hidden lg:flex items-center gap-2 text-white/60 hover:text-white transition-colors font-heading text-sm tracking-wider"
+            >
+              <Icon name="Phone" size={15} className="text-fire-500" />
+              {PHONE}
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -144,6 +153,13 @@ const Index = () => {
             >
               Заказать
             </button>
+            <a
+              href={PHONE_HREF}
+              className="flex items-center gap-2 text-white/60 font-heading text-base tracking-wider"
+            >
+              <Icon name="Phone" size={16} className="text-fire-500" />
+              {PHONE}
+            </a>
           </div>
         )}
       </nav>
@@ -322,9 +338,12 @@ const Index = () => {
                     <p className="font-body text-white/50 text-sm leading-relaxed mb-5">{item.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="font-heading text-2xl font-bold text-fire-500">{item.price}₽</span>
-                      <button className="bg-fire-500 hover:bg-fire-600 text-white font-heading text-sm tracking-wider uppercase px-5 py-2.5 rounded-full transition-all hover:scale-105">
+                      <a
+                        href={PHONE_HREF}
+                        className="inline-block bg-fire-500 hover:bg-fire-600 text-white font-heading text-sm tracking-wider uppercase px-5 py-2.5 rounded-full transition-all hover:scale-105"
+                      >
                         Заказать
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -337,9 +356,12 @@ const Index = () => {
               <p className="font-body text-white/50 mb-6">
                 Наши операторы помогут с выбором и ответят на все вопросы
               </p>
-              <button className="bg-fire-500 hover:bg-fire-600 text-white font-heading text-base tracking-wider uppercase px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-fire-500/20">
-                Позвонить нам
-              </button>
+              <a
+                href={PHONE_HREF}
+                className="inline-block bg-fire-500 hover:bg-fire-600 text-white font-heading text-base tracking-wider uppercase px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-fire-500/20"
+              >
+                {PHONE}
+              </a>
             </div>
           </section>
         </main>
@@ -465,9 +487,12 @@ const Index = () => {
                 Позвоните или напишите — ответим в течение 2 минут
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-fire-500 hover:bg-fire-600 text-white font-heading text-base tracking-wider uppercase px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-fire-500/20">
-                  Позвонить
-                </button>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-block bg-fire-500 hover:bg-fire-600 text-white font-heading text-base tracking-wider uppercase px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-fire-500/20"
+                >
+                  {PHONE}
+                </a>
                 <button
                   onClick={() => navTo("menu")}
                   className="border border-white/20 hover:border-fire-500/60 text-white/70 hover:text-white font-heading text-base tracking-wider uppercase px-10 py-4 rounded-full transition-all"
